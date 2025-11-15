@@ -6,10 +6,16 @@ if (!API_KEY) {
 }
 
 export async function fetchPopular() {
-  const res = await fetch(`${BASE}/movie/popular?api_key=${API_KEY}&language=en-US`);
-  if (!res.ok) throw new Error('Failed to fetch popular movies');
-  return res.json();
+  try {
+    const res = await fetch(`${BASE}/movie/popular?api_key=${API_KEY}&language=en-US`);
+    if (!res.ok) throw new Error('Failed to fetch popular movies');
+    return res.json();
+  } catch (err) {
+    console.error('Error fetching popular movies:', err);
+    return { results: [] };
+  }
 }
+
 
 export async function fetchTopRated() {
   const res = await fetch(`${BASE}/movie/top_rated?api_key=${API_KEY}&language=en-US`);
