@@ -11,11 +11,10 @@ export async function fetchPopular() {
     if (!res.ok) throw new Error('Failed to fetch popular movies');
     return res.json();
   } catch (err) {
-    console.error('Error fetching popular movies:', err);
+    console.error(err);
     return { results: [] };
   }
 }
-
 
 export async function fetchTopRated() {
   const res = await fetch(`${BASE}/movie/top_rated?api_key=${API_KEY}&language=en-US`);

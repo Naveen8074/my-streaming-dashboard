@@ -3,9 +3,16 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['image.tmdb.org'],
-  },
-  /* config options here */
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'image.tmdb.org',
+      port: '',
+      pathname: '/**',
+    },
+  ],
+}
+,
   reactCompiler: true,
 };
 
