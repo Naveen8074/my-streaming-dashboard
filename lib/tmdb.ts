@@ -1,6 +1,10 @@
 const BASE = 'https://api.themoviedb.org/3';
 const API_KEY = process.env.TMDB_API_KEY;
 
+if (!API_KEY) {
+  throw new Error('TMDB_API_KEY is missing in environment variables');
+}
+
 export async function fetchPopular() {
   const res = await fetch(`${BASE}/movie/popular?api_key=${API_KEY}&language=en-US`);
   if (!res.ok) throw new Error('Failed to fetch popular movies');

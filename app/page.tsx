@@ -2,6 +2,7 @@ import { fetchPopular, fetchTopRated, fetchTrending } from '../lib/tmdb';
 import HeroBanner from './components/HeroBanner';
 import MovieRow from './components/MovieRow';
 import { Movie } from '../types/movie';
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   const popularData = await fetchPopular();
