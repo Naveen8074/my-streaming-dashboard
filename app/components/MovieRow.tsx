@@ -21,15 +21,15 @@ export default function MovieRow({ movies, categoryTitle }: MovieRowProps) {
     const interval = setInterval(() => {
       if (!row) return;
 
-      scrollAmount += 1; // pixels per interval
+      scrollAmount += 1; 
       if (scrollAmount >= maxScroll) {
-        scrollAmount = 0; // reset to start
+        scrollAmount = 0; 
       }
       row.scrollTo({
         left: scrollAmount,
         behavior: 'smooth',
       });
-    }, 20); // every 20ms
+    }, 20); 
 
     return () => clearInterval(interval);
   }, [movies]);

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  const pathname = usePathname(); // get current path
+  const pathname = usePathname();
 
   const categories = ['popular', 'top_rated', 'trending'];
 

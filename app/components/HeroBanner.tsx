@@ -9,7 +9,7 @@ export default function HeroBanner({ movies }: { movies: Movie[] }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % movies.length);
-    }, 5000); // change every 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, [movies.length]);
 
